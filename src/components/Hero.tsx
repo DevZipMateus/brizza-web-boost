@@ -1,24 +1,23 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Home, Key, Star } from 'lucide-react';
-
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+  return <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background with gradient */}
       <div className="absolute inset-0 bg-gradient-hero"></div>
       
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute inset-0 bg-white/5" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      }}></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -45,21 +44,12 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4">
-            <Button 
-              size="lg"
-              onClick={() => scrollToSection('servicos')}
-              className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg group"
-            >
+            <Button size="lg" onClick={() => scrollToSection('servicos')} className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg group">
               Nossos Serviços
               <ArrowRight className="ml-2 w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
-            <Button 
-              size="lg"
-              variant="outline"
-              onClick={() => scrollToSection('contato')}
-              className="w-full sm:w-auto border-white text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg backdrop-blur-sm"
-            >
+            <Button size="lg" variant="outline" onClick={() => scrollToSection('contato')} className="w-full sm:w-auto border-white text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg backdrop-blur-sm bg-green-800 hover:bg-green-700">
               Fale Conosco
             </Button>
           </div>
@@ -99,8 +89,6 @@ const Hero = () => {
           <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
