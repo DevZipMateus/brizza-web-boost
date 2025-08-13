@@ -58,7 +58,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               onClick={() => scrollToSection('contato')}
-              className="w-full sm:w-auto border-white text-white hover:bg-brizza-green hover:text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg backdrop-blur-sm"
+              className="w-full sm:w-auto border-white text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg backdrop-blur-sm"
             >
               Fale Conosco
             </Button>
