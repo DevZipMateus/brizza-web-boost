@@ -25,7 +25,7 @@ const Footer = () => {
                 <img 
                   src="/lovable-uploads/29c85ecc-14ee-49fb-94d1-c99f90b71a0a.png" 
                   alt="Brizza Imóveis - Logo" 
-                  className="h-16 w-auto mb-4 brightness-0 invert"
+                  className="h-16 w-auto mb-4"
                 />
                 <p className="text-white/80 leading-relaxed mb-4">
                   Há 15 anos realizando sonhos e transformando vidas através do mercado imobiliário. 
