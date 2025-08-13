@@ -66,7 +66,7 @@ const Services = () => {
           </div>
 
           {/* Services Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 lg:mb-16">
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
@@ -74,7 +74,7 @@ const Services = () => {
                   key={index} 
                   className="border-0 shadow-soft hover:shadow-elegant transition-all duration-300 group hover:-translate-y-2"
                 >
-                  <CardContent className="p-8">
+                  <CardContent className="p-4 sm:p-6 lg:p-8">
                     {/* Icon */}
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6 group-hover:bg-primary/20 transition-colors">
                       <IconComponent className="w-8 h-8 text-primary" />
@@ -106,7 +106,7 @@ const Services = () => {
           </div>
 
           {/* CTA Section */}
-          <div className="text-center bg-gradient-primary rounded-3xl p-12 text-white">
+          <div className="text-center bg-gradient-primary rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 text-white mx-4 sm:mx-0">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
               Pronto para realizar seu sonho imobiliário?
             </h3>

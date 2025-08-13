@@ -63,16 +63,16 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             
             {/* Contact Form */}
             <div>
               <Card className="border-0 shadow-elegant">
-                <CardContent className="p-8">
+                <CardContent className="p-4 sm:p-6 lg:p-8">
                   <h3 className="text-2xl font-bold text-foreground mb-6">Envie sua mensagem</h3>
                   
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                           Nome *
@@ -170,7 +170,7 @@ const Contact = () => {
               
               {/* WhatsApp */}
               <Card className="border-0 shadow-soft hover:shadow-elegant transition-all duration-300 group">
-                <CardContent className="p-8">
+                <CardContent className="p-4 sm:p-6 lg:p-8">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-200 transition-colors">
                       <MessageCircle className="w-8 h-8 text-green-600" />
@@ -194,7 +194,7 @@ const Contact = () => {
 
               {/* Phone */}
               <Card className="border-0 shadow-soft hover:shadow-elegant transition-all duration-300 group">
-                <CardContent className="p-8">
+                <CardContent className="p-4 sm:p-6 lg:p-8">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <Phone className="w-8 h-8 text-primary" />
@@ -218,7 +218,7 @@ const Contact = () => {
 
               {/* Email */}
               <Card className="border-0 shadow-soft hover:shadow-elegant transition-all duration-300 group">
-                <CardContent className="p-8">
+                <CardContent className="p-4 sm:p-6 lg:p-8">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
                       <Mail className="w-8 h-8 text-secondary" />

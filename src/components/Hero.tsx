@@ -30,7 +30,7 @@ const Hero = () => {
           </div>
 
           {/* Main heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2">
             Seu <span className="text-yellow-300">melhor negócio</span>
             <br />
             <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
@@ -39,55 +39,55 @@ const Hero = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed px-4">
             Na Brizza Imóveis, transformamos sonhos em realidade. Especialistas em compra, venda e administração de imóveis com qualidade, confiança e transparência.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4">
             <Button 
               size="lg"
               onClick={() => scrollToSection('servicos')}
-              className="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-4 text-lg group"
+              className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg group"
             >
               Nossos Serviços
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
             <Button 
               size="lg"
               variant="outline"
               onClick={() => scrollToSection('contato')}
-              className="border-white text-white hover:bg-brizza-green hover:text-white font-semibold px-8 py-4 text-lg backdrop-blur-sm"
+              className="w-full sm:w-auto border-white text-white hover:bg-brizza-green hover:text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg backdrop-blur-sm"
             >
               Fale Conosco
             </Button>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-2xl mx-auto px-4">
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full mb-3">
-                <Home className="w-6 h-6" />
+              <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-full mb-2 sm:mb-3">
+                <Home className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <div className="text-2xl font-bold">500+</div>
-              <div className="text-white/80">Imóveis vendidos</div>
+              <div className="text-xl sm:text-2xl font-bold">500+</div>
+              <div className="text-sm sm:text-base text-white/80">Imóveis vendidos</div>
             </div>
             
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full mb-3">
-                <Key className="w-6 h-6" />
+              <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-full mb-2 sm:mb-3">
+                <Key className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <div className="text-2xl font-bold">15</div>
-              <div className="text-white/80">Anos de experiência</div>
+              <div className="text-xl sm:text-2xl font-bold">15</div>
+              <div className="text-sm sm:text-base text-white/80">Anos de experiência</div>
             </div>
             
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full mb-3">
-                <Star className="w-6 h-6" />
+              <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-white/20 backdrop-blur-sm rounded-full mb-2 sm:mb-3">
+                <Star className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <div className="text-2xl font-bold">100%</div>
-              <div className="text-white/80">Clientes satisfeitos</div>
+              <div className="text-xl sm:text-2xl font-bold">100%</div>
+              <div className="text-sm sm:text-base text-white/80">Clientes satisfeitos</div>
             </div>
           </div>
         </div>

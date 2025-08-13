@@ -18,15 +18,16 @@ const Location = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             
             {/* Map */}
             <div className="order-2 lg:order-1">
-              <div className="relative rounded-3xl overflow-hidden shadow-elegant">
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.8937458398283!2d-43.283829625080044!3d-22.166666449473996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x989428f5c4a623%3A0x8b7c5e2d3f4e5b6a!2sRua%20Augusto%20da%20Silva%20Pinto%2C%20721%20-%20Lava%20P%C3%A9s%2C%20Para%C3%ADba%20do%20Sul%20-%20RJ!5e0!3m2!1spt-BR!2sbr!4v1699123456789!5m2!1spt-BR!2sbr"
                   width="100%"
-                  height="400"
+                  height="300"
+                  className="sm:h-96 lg:h-[400px]"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
@@ -37,11 +38,11 @@ const Location = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="order-1 lg:order-2 space-y-6">
+            <div className="order-1 lg:order-2 space-y-4 lg:space-y-6">
               
               {/* Address */}
               <Card className="border-0 shadow-soft hover:shadow-elegant transition-all duration-300">
-                <CardContent className="p-6">
+                <CardContent className="p-4 sm:p-6">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                       <MapPin className="w-6 h-6 text-primary" />

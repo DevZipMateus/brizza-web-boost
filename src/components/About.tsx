@@ -18,7 +18,7 @@ const About = () => {
           </div>
 
           {/* Company Description */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12 lg:mb-20">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
                 Experiência que faz a diferença
@@ -53,11 +53,11 @@ const About = () => {
           </div>
 
           {/* Mission, Vision, Values */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             
             {/* Mission */}
             <Card className="border-0 shadow-soft hover:shadow-elegant transition-all duration-300 group">
-              <CardContent className="p-8 text-center">
+              <CardContent className="p-4 sm:p-6 lg:p-8 text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6 group-hover:bg-primary/20 transition-colors">
                   <Target className="w-8 h-8 text-primary" />
                 </div>
@@ -71,7 +71,7 @@ const About = () => {
 
             {/* Vision */}
             <Card className="border-0 shadow-soft hover:shadow-elegant transition-all duration-300 group">
-              <CardContent className="p-8 text-center">
+              <CardContent className="p-4 sm:p-6 lg:p-8 text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6 group-hover:bg-primary/20 transition-colors">
                   <Eye className="w-8 h-8 text-primary" />
                 </div>
@@ -85,7 +85,7 @@ const About = () => {
 
             {/* Values */}
             <Card className="border-0 shadow-soft hover:shadow-elegant transition-all duration-300 group">
-              <CardContent className="p-8 text-center">
+              <CardContent className="p-4 sm:p-6 lg:p-8 text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6 group-hover:bg-primary/20 transition-colors">
                   <Heart className="w-8 h-8 text-primary" />
                 </div>
