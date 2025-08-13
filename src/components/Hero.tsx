@@ -49,7 +49,7 @@ const Hero = () => {
               <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
-            <Button size="lg" variant="outline" onClick={() => scrollToSection('contato')} className="w-full sm:w-auto border-white text-white font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg backdrop-blur-sm bg-green-800 hover:bg-green-700 transition-colors">
+            <Button size="lg" onClick={() => scrollToSection('contato')} className="w-full sm:w-auto border border-white text-white font-semibold px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg backdrop-blur-sm bg-green-800 hover:bg-green-700 transition-colors">
               Fale Conosco
             </Button>
           </div>
