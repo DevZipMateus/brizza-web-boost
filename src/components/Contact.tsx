@@ -19,10 +19,24 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Simular envio do formulário
+    // Criar mensagem formatada para WhatsApp
+    const whatsappMessage = `*Contato via Site - Brizza Imóveis*
+
+*Nome:* ${formData.name}
+*Email:* ${formData.email}
+*Telefone:* ${formData.phone}
+*Assunto:* ${formData.subject}
+
+*Mensagem:*
+${formData.message}`;
+
+    // Enviar via WhatsApp
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    window.open(`https://wa.me/5524988540444?text=${encodedMessage}`, '_blank');
+    
     toast({
-      title: "Mensagem enviada!",
-      description: "Obrigado pelo contato. Retornaremos em breve!",
+      title: "Redirecionando para WhatsApp!",
+      description: "Sua mensagem será enviada via WhatsApp.",
     });
 
     // Reset form
