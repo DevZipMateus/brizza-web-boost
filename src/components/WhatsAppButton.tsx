@@ -66,10 +66,14 @@ const WhatsAppButton = () => {
       {/* WhatsApp Button */}
       <Button
         onClick={handleWhatsAppClick}
-        className="w-16 h-16 rounded-full bg-green-500 hover:bg-green-600 shadow-lg hover:shadow-xl transition-all duration-300 group"
+        className="w-16 h-16 rounded-full bg-transparent hover:scale-110 shadow-lg hover:shadow-xl transition-all duration-300 group p-0 border-0"
         aria-label="Falar no WhatsApp"
       >
-        <MessageCircle className="w-8 h-8 text-white group-hover:scale-110 transition-transform" />
+        <img 
+          src="/lovable-uploads/7102491c-cabb-4a32-ad65-75004216e4dc.png" 
+          alt="WhatsApp" 
+          className="w-full h-full object-cover rounded-full"
+        />
       </Button>
 
       {/* Pulse animation */}
