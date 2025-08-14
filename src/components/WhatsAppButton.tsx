@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { MessageCircle, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -38,7 +39,7 @@ const WhatsAppButton = () => {
     <div className="fixed bottom-6 right-6 z-50">
       {/* Tooltip */}
       {showTooltip && (
-        <div className="absolute bottom-20 right-0 mb-2 w-64 bg-white rounded-lg shadow-lg border p-4 animate-fade-in">
+        <div className="absolute bottom-20 right-0 mb-2 w-64 bg-white rounded-lg shadow-lg border p-4 animate-fade-in z-60">
           <button 
             onClick={handleCloseTooltip}
             className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
@@ -63,21 +64,23 @@ const WhatsAppButton = () => {
         </div>
       )}
 
-      {/* WhatsApp Button */}
-      <Button
-        onClick={handleWhatsAppClick}
-        className="w-16 h-16 rounded-full bg-transparent hover:scale-110 shadow-lg hover:shadow-xl transition-all duration-300 group p-0 border-0"
-        aria-label="Falar no WhatsApp"
-      >
-        <img 
-          src="/lovable-uploads/7102491c-cabb-4a32-ad65-75004216e4dc.png" 
-          alt="WhatsApp" 
-          className="w-full h-full object-cover rounded-full"
-        />
-      </Button>
-
-      {/* Pulse animation */}
-      <div className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-75"></div>
+      <div className="relative">
+        {/* Pulse animation - now behind the button */}
+        <div className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-75 -z-10"></div>
+        
+        {/* WhatsApp Button - now on top */}
+        <Button
+          onClick={handleWhatsAppClick}
+          className="w-16 h-16 rounded-full bg-transparent hover:scale-110 shadow-lg hover:shadow-xl transition-all duration-300 group p-0 border-0 relative z-10"
+          aria-label="Falar no WhatsApp"
+        >
+          <img 
+            src="/lovable-uploads/7102491c-cabb-4a32-ad65-75004216e4dc.png" 
+            alt="WhatsApp" 
+            className="w-full h-full object-cover rounded-full"
+          />
+        </Button>
+      </div>
     </div>
   );
 };
