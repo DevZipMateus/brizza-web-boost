@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
@@ -43,13 +44,13 @@ const Header = () => {
       )}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center">
             <img 
               src="/lovable-uploads/29c85ecc-14ee-49fb-94d1-c99f90b71a0a.png" 
               alt="Brizza Imóveis - Logo" 
-              className="h-8 lg:h-12 w-auto"
+              className="h-6 sm:h-8 lg:h-12 w-auto"
             />
           </div>
 
@@ -83,7 +84,7 @@ const Header = () => {
             className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
             aria-label="Menu"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 

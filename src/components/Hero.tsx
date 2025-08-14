@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Home, Key, Star } from 'lucide-react';
 const Hero = () => {
@@ -9,7 +10,7 @@ const Hero = () => {
       });
     }
   };
-  return <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+  return <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-14 sm:pt-16 lg:pt-20">
       {/* Background with gradient */}
       <div className="absolute inset-0 bg-gradient-hero"></div>
       
