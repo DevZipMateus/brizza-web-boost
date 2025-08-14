@@ -41,13 +41,11 @@ const About = () => {
             </div>
             <div className="relative">
               <div className="aspect-square bg-gradient-primary rounded-3xl p-8 shadow-elegant">
-                <div className="h-full bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <div className="text-6xl font-bold mb-2">15</div>
-                    <div className="text-xl font-medium">Anos de</div>
-                    <div className="text-xl font-medium">Excelência</div>
-                  </div>
-                </div>
+                <img 
+                  src="/lovable-uploads/b515ef3b-d2db-44d8-96e4-103b0a2c99c7.png" 
+                  alt="Residencial Paraíba Parque 2"
+                  className="h-full w-full object-cover rounded-2xl"
+                />
               </div>
             </div>
           </div>
