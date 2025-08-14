@@ -9,12 +9,6 @@ const Gallery = () => {
       description: "Espaços planejados para momentos de relaxamento e bem-estar"
     },
     {
-      id: 2,
-      title: "Residencial Paraíba parque 2",
-      image: "/lovable-uploads/b515ef3b-d2db-44d8-96e4-103b0a2c99c7.png",
-      description: "Ambientes modernos e sofisticados para seu conforto"
-    },
-    {
       id: 3,
       title: "Diversão",
       image: "/lovable-uploads/5523f293-b75f-44a4-9567-1c06f34b0ed5.png",
