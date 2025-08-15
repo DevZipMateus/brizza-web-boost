@@ -50,7 +50,7 @@ const Header = () => {
             <img 
               src="/lovable-uploads/29c85ecc-14ee-49fb-94d1-c99f90b71a0a.png" 
               alt="Brizza Imóveis - Logo" 
-              className="h-6 sm:h-8 lg:h-12 w-auto"
+              className="h-8 sm:h-10 lg:h-16 w-auto"
             />
           </div>
 
