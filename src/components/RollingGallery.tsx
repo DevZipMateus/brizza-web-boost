@@ -8,6 +8,8 @@ import {
   ResolvedValues,
 } from "motion/react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 interface RollingGalleryProps {
   autoplay?: boolean;
@@ -23,7 +25,8 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
   const [isScreenSizeSm, setIsScreenSizeSm] = useState<boolean>(
     window.innerWidth <= 640
   );
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const handleResize = () => setIsScreenSizeSm(window.innerWidth <= 640);
@@ -104,6 +107,19 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
     }
   };
 
+  const openImageModal = (index: number) => {
+    setSelectedImageIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const nextModalImage = () => {
+    setSelectedImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevModalImage = () => {
+    setSelectedImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
     <div className="relative h-[300px] w-full overflow-hidden">
       <div
@@ -147,27 +163,66 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
                 transform: `rotateY(${(360 / faceCount) * i}deg) translateZ(${radius}px)`,
               }}
             >
-              <Dialog>
-                <DialogTrigger asChild>
-                  <img
-                    src={url}
-                    alt={`Imóvel - Imagem ${i + 1}`}
-                    className="cursor-pointer h-[120px] w-[300px] rounded-[15px] border-[3px] border-border object-cover transition-transform duration-300 ease-out group-hover:scale-105 sm:h-[100px] sm:w-[220px]"
-                    onClick={() => setSelectedImage(url)}
-                  />
-                </DialogTrigger>
-                <DialogContent className="max-w-4xl max-h-[90vh] p-0">
-                  <img
-                    src={url}
-                    alt={`Imóvel - Imagem ${i + 1}`}
-                    className="w-full h-full object-contain rounded-lg"
-                  />
-                </DialogContent>
-              </Dialog>
+              <img
+                src={url}
+                alt={`Imóvel - Imagem ${i + 1}`}
+                className="cursor-pointer h-[120px] w-[300px] rounded-[15px] border-[3px] border-border object-cover transition-transform duration-300 ease-out group-hover:scale-105 sm:h-[100px] sm:w-[220px]"
+                onClick={() => openImageModal(i)}
+              />
             </div>
           ))}
         </motion.div>
       </div>
+      
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="max-w-6xl max-h-[95vh] p-0 bg-black/95">
+          <div className="relative w-full h-full flex items-center justify-center">
+            {/* Botão fechar */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute top-4 right-4 z-10 text-white hover:bg-white/20"
+              onClick={() => setIsModalOpen(false)}
+            >
+              <X className="h-6 w-6" />
+            </Button>
+            
+            {/* Seta anterior */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 text-white hover:bg-white/20"
+              onClick={prevModalImage}
+              disabled={images.length <= 1}
+            >
+              <ChevronLeft className="h-8 w-8" />
+            </Button>
+            
+            {/* Imagem */}
+            <img
+              src={images[selectedImageIndex]}
+              alt={`Imóvel - Imagem ${selectedImageIndex + 1}`}
+              className="max-w-full max-h-full object-contain"
+            />
+            
+            {/* Seta próxima */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 text-white hover:bg-white/20"
+              onClick={nextModalImage}
+              disabled={images.length <= 1}
+            >
+              <ChevronRight className="h-8 w-8" />
+            </Button>
+            
+            {/* Contador de imagens */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+              {selectedImageIndex + 1} / {images.length}
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
