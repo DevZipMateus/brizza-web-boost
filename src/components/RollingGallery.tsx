@@ -7,6 +7,7 @@ import {
   PanInfo,
   ResolvedValues,
 } from "motion/react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 interface RollingGalleryProps {
   autoplay?: boolean;
@@ -22,6 +23,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
   const [isScreenSizeSm, setIsScreenSizeSm] = useState<boolean>(
     window.innerWidth <= 640
   );
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     const handleResize = () => setIsScreenSizeSm(window.innerWidth <= 640);
@@ -145,11 +147,23 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
                 transform: `rotateY(${(360 / faceCount) * i}deg) translateZ(${radius}px)`,
               }}
             >
-              <img
-                src={url}
-                alt={`Imóvel - Imagem ${i + 1}`}
-                className="pointer-events-none h-[120px] w-[300px] rounded-[15px] border-[3px] border-border object-cover transition-transform duration-300 ease-out group-hover:scale-105 sm:h-[100px] sm:w-[220px]"
-              />
+              <Dialog>
+                <DialogTrigger asChild>
+                  <img
+                    src={url}
+                    alt={`Imóvel - Imagem ${i + 1}`}
+                    className="cursor-pointer h-[120px] w-[300px] rounded-[15px] border-[3px] border-border object-cover transition-transform duration-300 ease-out group-hover:scale-105 sm:h-[100px] sm:w-[220px]"
+                    onClick={() => setSelectedImage(url)}
+                  />
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl max-h-[90vh] p-0">
+                  <img
+                    src={url}
+                    alt={`Imóvel - Imagem ${i + 1}`}
+                    className="w-full h-full object-contain rounded-lg"
+                  />
+                </DialogContent>
+              </Dialog>
             </div>
           ))}
         </motion.div>
