@@ -48,7 +48,7 @@ const Properties = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-8 max-w-4xl mx-auto">
+        <div className="flex flex-col gap-8 max-w-7xl mx-auto xl:gap-12">
           {/* Imóvel 1 - Venda */}
           <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
             <CardHeader className="pb-4">
