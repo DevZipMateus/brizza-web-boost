@@ -70,13 +70,39 @@ const Properties = () => {
             />
 
             <CardContent className="p-6">
-              <CardDescription className="text-base leading-relaxed mb-4">
-                PRONTAS PARA MORAR, OU NA PLANTA.
-                <br />
-                EXCELENTE LOCALIZAÇÃO, GARAGEM PARA 2 CARROS, QUINTAL PARA ÁREA GOURMET, SALA E COZINHA AMPLA, ÁREA DE SERVIÇO.
-                <br />
-                <span className="font-semibold text-primary">Aceita financiamento Caixa</span>
-              </CardDescription>
+              <div className="space-y-4 mb-4">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-base font-medium text-foreground">Prontas para morar ou na planta</span>
+                </div>
+                
+                <div className="text-base text-muted-foreground space-y-2">
+                  <div className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Excelente localização</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Garagem para 2 carros</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Quintal para área gourmet</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Sala e cozinha ampla</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Área de serviço</span>
+                  </div>
+                </div>
+                
+                <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 mt-4">
+                  <span className="font-semibold text-primary">💳 Aceita financiamento Caixa</span>
+                </div>
+              </div>
               <Button 
                 onClick={() => contactWhatsApp('casa de 2 quartos para venda')}
                 className="w-full bg-primary hover:bg-primary/90"
