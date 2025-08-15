@@ -133,9 +133,35 @@ const Properties = () => {
             />
 
             <CardContent className="p-6">
-              <CardDescription className="text-base leading-relaxed mb-4">
-                Condomínio fechado, área de lazer com piscinas, play e salão de festas, prédio sem escadas, linda vista para a natureza, total segurança e tranquilidade.
-              </CardDescription>
+              <div className="space-y-4 mb-4">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                  <span className="text-base font-medium text-foreground">Condomínio fechado de alto padrão</span>
+                </div>
+                
+                <div className="text-base text-muted-foreground space-y-2">
+                  <div className="flex items-start gap-2">
+                    <span className="text-secondary mt-1">•</span>
+                    <span>Área de lazer com piscinas</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-secondary mt-1">•</span>
+                    <span>Playground e salão de festas</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-secondary mt-1">•</span>
+                    <span>Prédio sem escadas</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-secondary mt-1">•</span>
+                    <span>Linda vista para a natureza</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-secondary mt-1">•</span>
+                    <span>Total segurança e tranquilidade</span>
+                  </div>
+                </div>
+              </div>
               <Button 
                 onClick={() => contactWhatsApp('cobertura dúplex para locação')}
                 className="w-full bg-secondary hover:bg-secondary/90"
