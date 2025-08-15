@@ -1,12 +1,9 @@
-import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, Home, Key } from 'lucide-react';
+import { Home, Key } from 'lucide-react';
+import RollingGallery from './RollingGallery';
 
 const Properties = () => {
-  const [currentImageIndex1, setCurrentImageIndex1] = useState(0);
-  const [currentImageIndex2, setCurrentImageIndex2] = useState(0);
-
   const property1Images = [
     '/lovable-uploads/Brizza/imovel1/1561EA51EF4DA207AD063F34107F17B4.jpeg',
     '/lovable-uploads/Brizza/imovel1/1B34F18E66D87B7338A2CD736335211A.jpeg',
@@ -32,22 +29,6 @@ const Properties = () => {
     '/lovable-uploads/Brizza/imovel2/D2B49E06C5FC89C10E3B470993953FDD.jpeg',
     '/lovable-uploads/Brizza/imovel2/D76703EC9D7939ABF555DA14451126CF.jpeg'
   ];
-
-  const nextImage = (propertyIndex: number) => {
-    if (propertyIndex === 1) {
-      setCurrentImageIndex1((prev) => (prev + 1) % property1Images.length);
-    } else {
-      setCurrentImageIndex2((prev) => (prev + 1) % property2Images.length);
-    }
-  };
-
-  const prevImage = (propertyIndex: number) => {
-    if (propertyIndex === 1) {
-      setCurrentImageIndex1((prev) => (prev - 1 + property1Images.length) % property1Images.length);
-    } else {
-      setCurrentImageIndex2((prev) => (prev - 1 + property2Images.length) % property2Images.length);
-    }
-  };
 
   const contactWhatsApp = (property: string) => {
     const message = `Olá! Tenho interesse no ${property}. Gostaria de mais informações.`;
@@ -82,32 +63,11 @@ const Properties = () => {
               </CardTitle>
             </CardHeader>
             
-            <div className="relative">
-              <img
-                src={property1Images[currentImageIndex1]}
-                alt={`Casa para venda - Imagem ${currentImageIndex1 + 1}`}
-                className="w-full h-64 object-cover"
-              />
-              <Button
-                variant="outline"
-                size="icon"
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white"
-                onClick={() => prevImage(1)}
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white"
-                onClick={() => nextImage(1)}
-              >
-                <ChevronRight className="h-4 w-4" />
-              </Button>
-              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-2 py-1 rounded text-sm">
-                {currentImageIndex1 + 1} / {property1Images.length}
-              </div>
-            </div>
+            <RollingGallery 
+              autoplay={true} 
+              pauseOnHover={true}
+              images={property1Images}
+            />
 
             <CardContent className="p-6">
               <CardDescription className="text-base leading-relaxed mb-4">
@@ -140,32 +100,11 @@ const Properties = () => {
               </CardTitle>
             </CardHeader>
             
-            <div className="relative">
-              <img
-                src={property2Images[currentImageIndex2]}
-                alt={`Cobertura duplex para locação - Imagem ${currentImageIndex2 + 1}`}
-                className="w-full h-64 object-cover"
-              />
-              <Button
-                variant="outline"
-                size="icon"
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white"
-                onClick={() => prevImage(2)}
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white"
-                onClick={() => nextImage(2)}
-              >
-                <ChevronRight className="h-4 w-4" />
-              </Button>
-              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-2 py-1 rounded text-sm">
-                {currentImageIndex2 + 1} / {property2Images.length}
-              </div>
-            </div>
+            <RollingGallery 
+              autoplay={true} 
+              pauseOnHover={true}
+              images={property2Images}
+            />
 
             <CardContent className="p-6">
               <CardDescription className="text-base leading-relaxed mb-4">
