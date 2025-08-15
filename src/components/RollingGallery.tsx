@@ -121,7 +121,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
   };
 
   return (
-    <div className="relative h-[300px] w-full overflow-hidden">
+    <div className="relative h-[400px] w-full overflow-hidden">
       <div
         className="absolute top-0 left-0 h-full w-[48px] z-10"
         style={{
@@ -152,7 +152,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
             width: cylinderWidth,
             transformStyle: "preserve-3d",
           }}
-          className="flex min-h-[200px] cursor-grab items-center justify-center [transform-style:preserve-3d]"
+          className="flex min-h-[280px] cursor-grab items-center justify-center [transform-style:preserve-3d]"
         >
           {images.map((url, i) => (
             <div
@@ -166,7 +166,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
               <img
                 src={url}
                 alt={`Imóvel - Imagem ${i + 1}`}
-                className="cursor-pointer h-[120px] w-[300px] rounded-[15px] border-[3px] border-border object-cover transition-transform duration-300 ease-out group-hover:scale-105 sm:h-[100px] sm:w-[220px]"
+                className="cursor-pointer h-[160px] w-[400px] rounded-[15px] border-[3px] border-border object-cover transition-transform duration-300 ease-out group-hover:scale-105 sm:h-[140px] sm:w-[280px]"
                 onClick={() => openImageModal(i)}
               />
             </div>
